@@ -1,0 +1,32 @@
+{
+        "name": "your-project-name/drupal-project",
+        "description": "A Drupal 10 project.",
+        "type": "project",
+        "license": "GPL-2.0-or-later",
+        "require": {
+            "drupal/core-recommended": "^10.0",
+            "drupal/core-composer-scaffold": "^10.0",
+            "drush/drush": "^12.0"
+        },
+        "extra": {
+            "drupal-scaffold": {
+                "locations": {
+                    "web-root": "web/"
+                }
+            },
+            "installer-paths": {
+                "web/core": ["type:drupal-core"],
+                "web/modules/contrib/{$name}": ["type:drupal-module"],
+                "web/themes/contrib/{$name}": ["type:drupal-theme"],
+                "web/profiles/contrib/{$name}": ["type:drupal-profile"],
+                "web/libraries/{$name}": ["type:drupal-library"]
+            }
+        },
+        "minimum-stability": "dev",
+        "prefer-stable": true,
+        "config": {
+                "allow-plugins": {
+                        "drupal/core-composer-scaffold": true
+                }
+        }
+}
